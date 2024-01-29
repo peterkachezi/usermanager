@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+
+
+
+    <div class="card col-md-4" style="margin-left:45rem;margin-top:10rem;">
+        <div class="header text-center mt-3 mb-3">
+            <h5 class="title">Login to proceed</h5>      
+        </div>
+        <div class="card-body">
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["Error"].ToString()
+                </div>
+            }
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+                <div class="form-group  col-md-12">
+                    <label for="exampleInputEmail1">User Name</label>
+                    <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+                </div>
+                <div class="form-group  col-md-12">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class=" col-md-12 mt-3 text-center">
+                    <button type="submit" style="background-color:#80BA27; " class="btn btn-primary">Login</button>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+<style>     
+
+    .card{       
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 16px;
+        opacity: 1;
+    }
+    body {
+        top: 0px;
+        left: 0px;
+        width: 1920px;
+        height: 1080px;
+        background: transparent url('/images/bgimg.png') 0% 0% no-repeat padding-box;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
